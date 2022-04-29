@@ -10,7 +10,7 @@ class Mail extends StatefulWidget {
 }
 
 class _MailState extends State<Mail> {
-  bool toggle = false;
+  bool toggle = true;
 
   @override
   Widget build(BuildContext context) {
