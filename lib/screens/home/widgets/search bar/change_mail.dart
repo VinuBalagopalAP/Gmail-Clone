@@ -25,23 +25,59 @@ class ChangeMail extends StatelessWidget {
           children: [
             const CancelGoogle(),
             const IconMailMessage(),
-            const SizedBox(height: 15.0),
+            const SizedBox(height: 10.0),
             const ManageYourGoogleAccount(),
-            const SizedBox(height: 15.0),
+            const SizedBox(height: 10.0),
             Divider(color: Colors.grey[300]),
-            SingleChildScrollView(
-              child: ListView.separated(
-                itemBuilder: (context, index) {
-                  return const IconMailMessage();
-                },
-                itemCount: 5,
-                shrinkWrap: true,
-                physics: const AlwaysScrollableScrollPhysics(),
-                separatorBuilder: (context, index) {
-                  return const SizedBox(
-                    height: 10,
-                  );
-                },
+            ListView.separated(
+              itemBuilder: (context, index) {
+                return const IconMailMessage();
+              },
+              itemCount: 3,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              separatorBuilder: (context, index) {
+                return const SizedBox(
+                  height: 10,
+                );
+              },
+            ),
+            const SizedBox(height: 10.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.person_add_alt_outlined),
+                  ),
+                  const Text(
+                    "Add another account",
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.manage_accounts_outlined),
+                  ),
+                  const Text(
+                    "Manage accounts on this device",
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.02),
