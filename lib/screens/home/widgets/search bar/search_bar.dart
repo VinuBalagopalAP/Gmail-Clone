@@ -1,5 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gmail_clone/screens/home/widgets/change_mail.dart';
+import 'package:gmail_clone/screens/home/widgets/search%20bar/change_mail.dart';
 
 class TopSearchBar extends StatelessWidget {
   const TopSearchBar({
@@ -38,7 +39,6 @@ class TopSearchBar extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                // show the dialog
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {

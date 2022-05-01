@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gmail_clone/screens/home/widgets/mail.dart';
-import 'package:gmail_clone/screens/home/widgets/search_bar.dart';
+import 'package:gmail_clone/screens/home/widgets/search%20bar/search_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
