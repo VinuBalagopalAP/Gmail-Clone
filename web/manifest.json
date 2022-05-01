@@ -1,6 +1,6 @@
 {
-    "name": "sachin",
-    "short_name": "sachin",
+    "name": "gmail_clone",
+    "short_name": "gmail_clone",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
