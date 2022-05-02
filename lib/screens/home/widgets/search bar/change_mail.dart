@@ -29,18 +29,19 @@ class ChangeMail extends StatelessWidget {
             const ManageYourGoogleAccount(),
             const SizedBox(height: 10.0),
             Divider(color: Colors.grey[300]),
-            ListView.separated(
-              itemBuilder: (context, index) {
-                return const IconMailMessage();
-              },
-              itemCount: 3,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              separatorBuilder: (context, index) {
-                return const SizedBox(
-                  height: 10,
-                );
-              },
+            Expanded(
+              flex: 14,
+              child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return const IconMailMessage();
+                },
+                itemCount: 8,
+                separatorBuilder: (context, index) {
+                  return const SizedBox(
+                    height: 10,
+                  );
+                },
+              ),
             ),
             const SizedBox(height: 10.0),
             Padding(

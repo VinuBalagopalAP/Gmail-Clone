@@ -28,18 +28,21 @@ class IconMailMessage extends StatelessWidget {
             width: 40,
           ),
           const SizedBox(width: 10.0),
-          Column(
-            children: const [
-              Text(
-                'Name',
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 16.0,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  'Name',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.0,
+                  ),
                 ),
-              ),
-              SizedBox(height: 5.0),
-              EmailNumber(),
-            ],
+                SizedBox(height: 5.0),
+                EmailNumber(),
+              ],
+            ),
           ),
         ],
       ),
@@ -55,18 +58,18 @@ class EmailNumber extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: const [
         Text(
           'Email',
           style: TextStyle(
-            fontSize: 12.0,
+            fontSize: 14.0,
           ),
         ),
         Text(
           '10',
           style: TextStyle(
-            fontSize: 12.0,
+            fontSize: 14.0,
           ),
         ),
       ],
