@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gmail_clone/screens/home/meet/widgets/meet_features.dart';
 import 'package:gmail_clone/screens/home/meet/widgets/meet_options.dart';
 import 'package:gmail_clone/screens/home/widgets/search%20bar/change_mail.dart';
 
@@ -66,6 +67,10 @@ class TabViewMeet extends StatelessWidget {
                 title: "Join with a code",
               ),
             ],
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.75,
+            child: const MeetFeatures(),
           ),
         ],
       ),
