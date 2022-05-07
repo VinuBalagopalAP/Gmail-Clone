@@ -44,42 +44,15 @@ class ChangeMail extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.person_add_alt_outlined),
-                  ),
-                  const Text(
-                    "Add another account",
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
+            AnotherMailOption(
+              ontap: () {},
+              icon: const Icon(Icons.person_add_alt_outlined),
+              title: "Add another account",
             ),
-            const SizedBox(height: 10.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.manage_accounts_outlined),
-                  ),
-                  const Text(
-                    "Manage accounts on this device",
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
+            AnotherMailOption(
+              ontap: () {},
+              icon: const Icon(Icons.manage_accounts_outlined),
+              title: "Manage accounts on this device",
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.02),
             const Expanded(
@@ -89,6 +62,44 @@ class ChangeMail extends StatelessWidget {
               ),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class AnotherMailOption extends StatelessWidget {
+  final Icon icon;
+  final VoidCallback ontap;
+  final String title;
+
+  const AnotherMailOption({
+    Key? key,
+    required this.icon,
+    required this.title,
+    required this.ontap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: ontap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        child: Row(
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: icon,
+            ),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ],
         ),
       ),

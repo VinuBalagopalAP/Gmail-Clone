@@ -1,60 +1,60 @@
 import 'package:flutter/material.dart';
-import 'package:gmail_clone/screens/home/widgets/mail.dart';
-import 'package:gmail_clone/screens/home/widgets/search%20bar/search_bar.dart';
+import 'package:gmail_clone/screens/home/mail/tabview_mail.dart';
+import 'package:gmail_clone/screens/home/meet/tabview_meet.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _ix = 0;
+
+  final List<Widget> _pages = [
+    const TabViewMail(),
+    const TabViewMeet(),
+  ];
+  Widget _bodyWidet() {
+    return _pages[_ix];
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const TopSearchBar(),
-            const SizedBox(
-              height: 10,
+      body: _bodyWidet(),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _ix,
+        onTap: (ix) {
+          setState(() {
+            _ix = ix;
+          });
+        },
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.mail,
+              color: Colors.black87,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: Column(
-                children: [
-                  const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Primary",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  ListView.separated(
-                    itemBuilder: (context, index) {
-                      return const Mail();
-                    },
-                    itemCount: 3,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    separatorBuilder: (context, index) {
-                      return const Divider(
-                        height: 10,
-                      );
-                    },
-                  ),
-                ],
-              ),
+            label: 'Mail',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.videocam_outlined,
+              color: Colors.black87,
             ),
-          ],
-        ),
+            label: 'Meet',
+          ),
+        ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {},
-      //   child: const Icon(Icons.add),
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
